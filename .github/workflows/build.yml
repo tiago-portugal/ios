@@ -26,7 +26,7 @@ jobs:
       - name: Create CloudAccessSecrets
         run: ./create-cloud-access-secrets-file.sh
       - name: List files
-        run: (find / -type f -name "*.swift" 2> /dev/null)
+        run: $(find / -type f -name "*.swift" 2> /dev/null)
       - name: Build
         run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild clean build-for-testing -scheme 'AllTests' -destination "name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES | xcpretty
 #      - name: Test
