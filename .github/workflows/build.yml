@@ -25,9 +25,9 @@ jobs:
           exit $?
       - name: Create CloudAccessSecrets
         run: ./create-cloud-access-secrets-file.sh
-      - name: List files
-        run: |
-          find / -type f -name "*.swift" 2> /dev/null
+#      - name: List files 0
+#        run: |
+#          find / -type f -name "*.swift" 2> /dev/null
 #          ls ${{ github.workspace }}
       - name: Build
         run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild clean build-for-testing -scheme 'AllTests' -destination "name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES | xcpretty
@@ -38,6 +38,12 @@ jobs:
 #          gem install slather
 #          slather coverage -x  --build-directory $DERIVED_DATA_PATH --ignore "$DERIVED_DATA_PATH/SourcePackages/*" --scheme AllTests Cryptomator.xcodeproj
 #          bash <(curl -Ls https://coverage.codacy.com/get.sh)
+      - name: List files 1
+        run: |
+          find / -type f -name "*.ipa" 2> /dev/null
+      - name: List files 2
+        run: |
+          ls ${{ github.workspace }}
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
         continue-on-error: true
