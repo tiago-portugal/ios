@@ -25,6 +25,11 @@ jobs:
           exit $?
       - name: Create CloudAccessSecrets
         run: ./create-cloud-access-secrets-file.sh
+      - name: Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with: 
+          name: assets-for-download
+          path: /Users/runner/work/ios/
 #      - name: List files 0
 #        run: |
 #          find / -type f -name "*.swift" 2> /dev/null
