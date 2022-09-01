@@ -46,7 +46,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with: 
           name: assets-for-download
-          path: /Users/runner/work/ios/ios/Cryptomator.xcarchive
+#          path: /Users/runner/work/ios/ios/Cryptomator.xcarchive
+          path: $DERIVED_DATA_PATH
 #      -y name: Export IPA
 #        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -exportArchive -archivePath /Users/runner/work/ios/ios/Cryptomator.xcarchive -exportPath /Users/runner/work/ios/ios/Cryptomator.xcarchive/Cryptomator.ipa -exportOptionsPlist /Users/runner/work/ios/ios/exportOptions.plist | xcpretty
       - name: List files 2
