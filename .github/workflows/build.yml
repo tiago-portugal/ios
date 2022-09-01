@@ -32,7 +32,7 @@ jobs:
 #      - name: Build (original)
 #        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild clean build-for-testing -scheme 'AllTests' -destination "name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES | xcpretty
       - name: Build (mod)
-        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild clean build-for-testing -scheme 'AllTests' -destination "name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES  -archivePath /Users/runner/work/ios/ios/Cryptomator.xcarchive | xcpretty
+        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild clean build-for-testing -scheme 'AllTests' -destination "name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -archivePath /Users/runner/work/ios/ios/Cryptomator.xcarchive -enableCodeCoverage YES | xcpretty
       - name: Export IPA
         run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -exportArchive -archivePath /Users/runner/work/ios/ios/Cryptomator.xcarchive -exportPath /Users/runner/work/ios/ios/Cryptomator.xcarchive/Cryptomator.ipa -exportOptionsPlist /Users/runner/work/ios/ios/exportOptions.plist | xcpretty
 #      - name: Test
