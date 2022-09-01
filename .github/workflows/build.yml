@@ -26,7 +26,7 @@ jobs:
       - name: Create CloudAccessSecrets
         run: ./create-cloud-access-secrets-file.sh
       - name: List project settings
-        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -list -project /Users/runner/work/ios/ios/Cryptomator.xcodeproj | xcpretty
+        run: xcodebuild -list -project /Users/runner/work/ios/ios/Cryptomator.xcodeproj
 #      - name: List files 0
 #        run: |
 #          find / -type f -name "*.swift" 2> /dev/null
