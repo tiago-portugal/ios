@@ -49,7 +49,7 @@ jobs:
         with: 
           name: assets-for-download
 #          path: /Users/runner/work/ios/ios/Cryptomator.xcarchive
-          path: /Users/runner/work/ios/ios/DerivedData/Cryptomator.ipa
+          path: /Users/runner/work/ios/ios/DerivedData/
 #      -y name: Export IPA
 #        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -exportArchive -archivePath /Users/runner/work/ios/ios/Cryptomator.xcarchive -exportPath /Users/runner/work/ios/ios/Cryptomator.xcarchive/Cryptomator.ipa -exportOptionsPlist /Users/runner/work/ios/ios/exportOptions.plist | xcpretty
       - name: List files 2
